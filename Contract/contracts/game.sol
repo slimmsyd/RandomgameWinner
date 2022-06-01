@@ -67,7 +67,7 @@ contract RandomGame is VRFConsumerBase, Ownable {
         //check if the value sent by user matches the entryFEe
         require(msg.value == entryFee, "Value sent is not equal to entryFee");
         //check if there is still some space left in the game to add another player 
-        require(players.length  <maxPlayers, "Game is full");
+        require(players.length  < maxPlayers, "Game is full");
         //add the sender to the players list 
         players.push(msg.sender); 
         emit PlayerJoined(gameID, msg.sender);
